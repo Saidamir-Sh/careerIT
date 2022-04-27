@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import theme from './Style/theme'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid'

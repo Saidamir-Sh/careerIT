@@ -1,14 +1,28 @@
+import { blueGrey, green } from '@material-ui/core/colors';
 import { createTheme } from '@mui/material/styles';
-import { green, purple } from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: purple[700],
+      main: green[700],
     },
     secondary: {
-      main: green[100],
+      main: blueGrey[700],
     },
+  },
+  typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Montserrat, sans-serif',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
   },
 })
 

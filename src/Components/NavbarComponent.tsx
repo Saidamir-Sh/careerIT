@@ -1,26 +1,34 @@
 import React from 'react'
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '../Style/theme'
+import Box from '@mui/material/Box';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { Button } from '@mui/material';
 
 
 function NavbarComponent() {
   return (
-    <ThemeProvider theme={theme}>
-    <AppBar position="static" color="secondary">
+    <AppBar position="static" color="primary">
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
         </IconButton>
-        <Typography variant="h6" color="inherit" component="div">
+        <Typography variant="h5" color="inherit" component="div">
           CareerIT
         </Typography>
+        <Box component='div'  style={{
+          marginLeft: '15%'
+        }}>
+          <Typography>Home</Typography>
+          <Typography>Jobseekers</Typography>
+          <Typography>Employers</Typography>
+          <Typography>Jobs</Typography>
+          <Typography>Features</Typography> 
+        </Box>
       </Toolbar>
     </AppBar>
-  </ThemeProvider>
   )
 }
 
