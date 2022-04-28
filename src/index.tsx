@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "@fontsource/montserrat"
 import "@fontsource/montserrat/900.css"
+import "@fontsource/montserrat/600.css"
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
