@@ -6,12 +6,12 @@ import theme from './Style/theme'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid'
 import NavbarComponent from './Components/NavbarComponent'
+import SearchComponent from './Components/SearchComponent';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container style={{
-        border: "solid",
         minWidth: "100%",
         height: "100vh",
         padding: '0%'
@@ -21,6 +21,11 @@ function App() {
             <Grid item xs={12}>
               <Routes>
                 <Route path='/' element={<NavbarComponent />}/>
+              </Routes>
+            </Grid>
+            <Grid item xs={12}>
+              <Routes>
+                <Route path='/' element={<SearchComponent />}/>
               </Routes>
             </Grid>
           </Grid>
