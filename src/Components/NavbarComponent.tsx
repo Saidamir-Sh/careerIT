@@ -1,5 +1,4 @@
 import React from 'react'
-import Logo from '../Assets/Images/Logo.png'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -17,7 +16,7 @@ function NavbarComponent() {
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
         </IconButton>
-        <img src={Logo} width={'10%'}/>
+        <Typography variant="h5">CareerIT</Typography>
         <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} component='div' style={{
           width: '10%',
           position: 'absolute',
