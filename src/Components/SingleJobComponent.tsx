@@ -10,7 +10,7 @@ import { Box } from '@mui/system';
 
 function SingleJobComponent() {
   return (
-    <Card>
+    <Card style={{width: '100%'}}>
       <CardContent sx={{m: 0, p: 1}}>
         <Typography variant='subtitle1' fontWeight={600}>Front end developer</Typography>
         <Typography variant='subtitle2' color='primary' fontSize={14} >Undisclosed salary</Typography>

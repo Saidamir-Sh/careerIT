@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid'
 import NavbarComponent from './Components/NavbarComponent'
 import SearchComponent from './Components/SearchComponent';
 import SingleJobComponent from './Components/SingleJobComponent';
+import JobBoard from './Pages/JobBoard';
 
 function App() {
   return (
@@ -29,7 +30,11 @@ function App() {
                 <Route path='/' element={<SearchComponent />}/>
               </Routes>
             </Grid>
-            <SingleJobComponent />
+            <Grid item xs={12}>
+              <Routes>
+                <Route path='/' element={<JobBoard />}/>
+              </Routes>
+            </Grid>
           </Grid>
         </BrowserRouter>
       </Container>
