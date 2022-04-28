@@ -5,8 +5,32 @@ import SingleJobComponent from '../Components/SingleJobComponent';
 
 function JobBoard() {
   return (
-    <Container style={{overflowY: 'scroll'}}>
+    <Container style={{overflowY: 'scroll', height: '50vh'}}>
         <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
+            <Grid item xs={12}>
+                <SingleJobComponent />
+            </Grid>
             <Grid item xs={12}>
                 <SingleJobComponent />
             </Grid>
