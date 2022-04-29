@@ -30,7 +30,7 @@ function SearchComponent() {
             renderInput={(params) => <TextField {...params} label="By category" />}
           />
             <TextField id="outlined-basic"  label="Search for jobs..." variant="outlined" fullWidth  sx={{mr: 2}}/>
-            <Button variant='outlined' size='large' startIcon={<SearchIcon />}>Search</Button>
+            <Button sx={{px: 4}} variant='outlined' size='large' startIcon={<SearchIcon />}>Search</Button>
         </Box>
     </Container>
   )

@@ -16,7 +16,7 @@ function NavbarComponent() {
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
         </IconButton>
-        <Typography variant="h5">CareerIT</Typography>
+        <Typography variant="h5" fontWeight={900}>CareerIT</Typography>
         <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} component='div' style={{
           width: '10%',
           position: 'absolute',
