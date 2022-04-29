@@ -7,7 +7,7 @@ function JobBoard() {
   return (
     <Container style={{overflowY: 'scroll', height: '50vh'}}>
         <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{cursor: 'pointer'}}>
                 <SingleJobComponent />
             </Grid>
             <Grid item xs={12}>
