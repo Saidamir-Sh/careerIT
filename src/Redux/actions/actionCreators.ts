@@ -35,10 +35,10 @@ export const fetchSearched = (url: string, query: string) => {
         }
     }
 }
-export const fetchByCategory = (url: string, category: string) => {
+export const fetchByCategory = (url: string, category: {label: string} | null = {label : 'developer'}) => {
     return async (dispatch: Dispatch<Action>) => {
         try {
-            let response = await fetch(`${url}category=${category}&limit=20`)
+            let response = await fetch(`${url}category=${category?.label}&limit=20`)
             if(response.ok) {
                 let data = await response.json()
                 dispatch({

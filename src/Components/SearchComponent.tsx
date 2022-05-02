@@ -4,22 +4,23 @@ import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import SearchIcon from '@mui/icons-material/Search';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useDispatch } from 'react-redux';
-import { fetchSearched, URL } from '../Redux/actions/actionCreators';
+import { fetchByCategory, fetchSearched, URL } from '../Redux/actions/actionCreators';
 
 function SearchComponent() {
 
   const dispatch = useDispatch()
 
   const [searchQuery, setSearchQuery] = useState<string>('')
+  const [byCategory, setbyCategory] = useState<string>('')
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
   }
 
+  console.log(byCategory)
   const category = [
     { label: 'DevOps'},
     { label: 'Finance'},
-    { label: 'Software Developer'},
     { label: 'Writing'},
     { label: 'Human Resources'},
     { label: 'Data'},
@@ -46,6 +47,7 @@ function SearchComponent() {
             disablePortal
             id="combo-box-demo"
             options={category}
+            onChange={(event, value) => dispatch<any>(fetchByCategory(URL, value))}
             sx={{ width: 250, mr: 2 }}
             renderInput={(params) => <TextField {...params} label="By category" />}
           />
