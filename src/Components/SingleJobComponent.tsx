@@ -17,11 +17,11 @@ function SingleJobComponent(props: {job: Job}) {
         <Box display='flex' sx={{mt: 3}}>
             <Box display='flex' style={{alignItems:'center'}}>
                 <BusinessIcon color='disabled'/>
-                <Typography variant='subtitle2' color='disabled' >Facebook</Typography>
+                <Typography variant='subtitle2' color='disabled' >{props.job.company_name}</Typography>
             </Box>
             <Box display='flex' style={{marginLeft: '3em', alignItems:'center'}}>
                 <LocationOnIcon color='disabled'/>
-                <Typography variant='subtitle2' color='disabled' >USA</Typography>
+                <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
             <Box style={{position: 'absolute', right: '2%', top: '40%'}}>
                 <FavoriteBorderIcon color='primary'/>
