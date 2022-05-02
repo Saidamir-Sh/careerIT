@@ -9,9 +9,12 @@ import NavbarComponent from './Components/NavbarComponent'
 import SearchComponent from './Components/SearchComponent';
 import SingleJobComponent from './Components/SingleJobComponent';
 import JobBoard from './Pages/JobBoard';
+import { Provider } from 'react-redux';
+import {configureStore} from './Redux/store/index'
 
 function App() {
   return (
+    <Provider store={configureStore}>
     <ThemeProvider theme={theme}>
       <Container style={{
         minWidth: "100%",
@@ -39,6 +42,7 @@ function App() {
         </BrowserRouter>
       </Container>
     </ThemeProvider>
+    </Provider>
   );
 }
 

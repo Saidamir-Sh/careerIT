@@ -17,8 +17,9 @@ export const initialState: State = {
     savedJobs: [],
 }
 
-const configureStore = createStore(
+export const configureStore = createStore(
     rootReducer, 
     initialState, 
     composeEnhancers(applyMiddleware(thunk))
 )
+
