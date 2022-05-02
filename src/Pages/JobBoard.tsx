@@ -3,13 +3,15 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid'
 import SingleJobComponent from '../Components/SingleJobComponent';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { fetchJobs, URL } from '../Redux/actions/actionCreators';
+import { State } from '../Redux/store/Interfaces';
 
 function JobBoard() {
 
     const dispatch = useDispatch()
-    const state = useSelector((state) => state.jobs)
-    console.log(state)
+    const jobs = useTypedSelector((state) => state.jobs)
+    console.log(jobs)
 
     useEffect(() => {
         dispatch<any>(fetchJobs(URL))
@@ -18,42 +20,13 @@ function JobBoard() {
   return (
     <Container style={{overflowY: 'scroll', height: '50vh'}}>
         <Grid container spacing={2}>
-            <Grid item xs={12} style={{cursor: 'pointer'}}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
-            <Grid item xs={12}>
-                <SingleJobComponent />
-            </Grid>
+            {
+                jobs.map((job) => (
+                    <Grid item xs={12} key={job._id} style={{cursor: 'pointer'}}>
+                        <SingleJobComponent  job={job}/>
+                    </Grid>
+                ))
+            }
         </Grid>
     </Container>
   )

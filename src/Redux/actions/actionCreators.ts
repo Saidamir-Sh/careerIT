@@ -11,7 +11,7 @@ export const fetchJobs = (url: string) => {
                 let data = await response.json()
                 dispatch({
                     type: ActionType.FETCH_JOBS,
-                    payload: data
+                    payload: data.data
                 })
             }
         } catch (error) {

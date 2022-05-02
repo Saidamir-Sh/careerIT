@@ -6,13 +6,14 @@ import BusinessIcon from '@mui/icons-material/Business';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Box } from '@mui/system';
+import { Job } from '../Redux/store/Interfaces';
 
-function SingleJobComponent() {
+function SingleJobComponent(props: {job: Job}) {
   return (
     <Card style={{width: '100%', position: 'relative'}}>
       <CardContent sx={{m: 0, p: 1}}>
-        <Typography variant='subtitle1' fontWeight={600}>Front end developer</Typography>
-        <Typography variant='subtitle2' color='primary' fontSize={14} >Undisclosed salary</Typography>
+        <Typography variant='subtitle1' fontWeight={600}>{props.job.title}</Typography>
+        <Typography variant='subtitle2' color='primary' fontSize={14} >{!props.job.salary ? 'Undisclosed salary' : props.job.salary}</Typography>
         <Box display='flex' sx={{mt: 3}}>
             <Box display='flex' style={{alignItems:'center'}}>
                 <BusinessIcon color='disabled'/>
