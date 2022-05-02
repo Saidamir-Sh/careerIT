@@ -15,8 +15,8 @@ function SearchComponent() {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
   }
-  console.log(searchQuery)
-  const top100Films = [
+
+  const category = [
     { label: 'DevOps'},
     { label: 'Finance'},
     { label: 'Software Developer'},
@@ -45,7 +45,7 @@ function SearchComponent() {
         <Autocomplete
             disablePortal
             id="combo-box-demo"
-            options={top100Films}
+            options={category}
             sx={{ width: 250, mr: 2 }}
             renderInput={(params) => <TextField {...params} label="By category" />}
           />

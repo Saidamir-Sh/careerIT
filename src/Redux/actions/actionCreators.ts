@@ -15,7 +15,7 @@ export const fetchJobs = (url: string) => {
                 })
             }
         } catch (error) {
-            console.log('Error occured in fetchJobs action, Error ' + error)
+            console.log('Error occured in fetchJobs action, Error : ' + error)
         }
     }
 }
@@ -25,14 +25,29 @@ export const fetchSearched = (url: string, query: string) => {
             let response = await fetch(`${url}search=${query}&limit=20`)
             if(response.ok) {
                 let data = await response.json()
-                console.log(data)
                 dispatch({
                     type: ActionType.FETCH_SEARCHED_JOBS,
                     payload: data.data
                 })
             }
         } catch (error) {
-            console.log('Error occured in fetchSearched action, Error ' + error)
+            console.log('Error occured in fetchSearched action, Error : ' + error)
+        }
+    }
+}
+export const fetchByCategory = (url: string, category: string) => {
+    return async (dispatch: Dispatch<Action>) => {
+        try {
+            let response = await fetch(`${url}category=${category}&limit=20`)
+            if(response.ok) {
+                let data = await response.json()
+                dispatch({
+                    type: ActionType.FETCH_BY_CATEGORY,
+                    payload: data.data
+                })
+            }
+        } catch (error) {
+            console.log('Error occured in fetchByCategory action, Error : ' + error)
         }
     }
 }
