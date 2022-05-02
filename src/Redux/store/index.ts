@@ -23,3 +23,6 @@ export const configureStore = createStore(
     composeEnhancers(applyMiddleware(thunk))
 )
 
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof configureStore.getState>
+export type AppDispatch = typeof configureStore.dispatch

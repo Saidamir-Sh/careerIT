@@ -20,4 +20,3 @@ export const fetchJobs = (url: string) => {
         }
     }
 }
-

@@ -2,16 +2,19 @@ import React, { useEffect } from 'react'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid'
 import SingleJobComponent from '../Components/SingleJobComponent';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchJobs, URL } from '../Redux/actions/actionCreators';
 
 function JobBoard() {
 
     const dispatch = useDispatch()
+    const state = useSelector((state) => state)
+    console.log(state)
 
     useEffect(() => {
-        dispatch(fetchJobs(URL))
+        dispatch<any>(fetchJobs(URL))
     }, [])
+
   return (
     <Container style={{overflowY: 'scroll', height: '50vh'}}>
         <Grid container spacing={2}>

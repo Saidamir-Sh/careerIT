@@ -23,10 +23,6 @@ interface actionByCategory {
     type: ActionType.FETCH_BY_CATEGORY;
     payload: Job[];
 }
-// interface actionFetchCompany {
-//     type: ActionType.FETCH_COMPANY;
-//     payload: string;
-// }
 interface actionAddSaved {
     type: ActionType.ADD_TO_SAVED;
     payload: Job;
