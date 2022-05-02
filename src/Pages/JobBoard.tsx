@@ -11,7 +11,6 @@ function JobBoard() {
 
     const dispatch = useDispatch()
     const jobs = useTypedSelector((state) => state.jobs)
-    console.log(jobs)
 
     useEffect(() => {
         dispatch<any>(fetchJobs(URL))

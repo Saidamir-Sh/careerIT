@@ -1,13 +1,33 @@
-import React from 'react'
+import React, { useState, ChangeEvent } from 'react'
 import { Box, Container, Typography, TextField, Button } from '@mui/material'
+import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import SearchIcon from '@mui/icons-material/Search';
 import Autocomplete from '@mui/material/Autocomplete';
+import { useDispatch } from 'react-redux';
+import { fetchSearched, URL } from '../Redux/actions/actionCreators';
 
 function SearchComponent() {
+
+  const dispatch = useDispatch()
+
+  const [searchQuery, setSearchQuery] = useState<string>('')
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value)
+  }
+  console.log(searchQuery)
   const top100Films = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 } ]
+    { label: 'DevOps'},
+    { label: 'Finance'},
+    { label: 'Software Developer'},
+    { label: 'Writing'},
+    { label: 'Human Resources'},
+    { label: 'Data'},
+    { label: 'Product'},
+    { label: 'Marketing'},
+    { label: 'Design'},
+    { label: 'All others'} ]
+
   return (
     <Container maxWidth="sm" style={{
         minWidth: "60%",
@@ -29,8 +49,8 @@ function SearchComponent() {
             sx={{ width: 250, mr: 2 }}
             renderInput={(params) => <TextField {...params} label="By category" />}
           />
-            <TextField id="outlined-basic"  label="Search for jobs..." variant="outlined" fullWidth  sx={{mr: 2}}/>
-            <Button sx={{px: 4}} variant='outlined' size='large' startIcon={<SearchIcon />}>Search</Button>
+            <TextField id="outlined-basic" onChange={handleSearch}  label="Search for jobs..." variant="outlined" fullWidth  sx={{mr: 2}}/>
+            <Button sx={{px: 4}} onClick={() => dispatch<any>(fetchSearched(URL, searchQuery))} variant='outlined' size='large' startIcon={<SearchIcon />}>Search</Button>
         </Box>
     </Container>
   )

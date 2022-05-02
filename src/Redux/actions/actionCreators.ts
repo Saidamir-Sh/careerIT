@@ -19,3 +19,20 @@ export const fetchJobs = (url: string) => {
         }
     }
 }
+export const fetchSearched = (url: string, query: string) => {
+    return async (dispatch: Dispatch<Action>) => {
+        try {
+            let response = await fetch(`${url}search=${query}&limit=20`)
+            if(response.ok) {
+                let data = await response.json()
+                console.log(data)
+                dispatch({
+                    type: ActionType.FETCH_SEARCHED_JOBS,
+                    payload: data.data
+                })
+            }
+        } catch (error) {
+            console.log('Error occured in fetchSearched action, Error ' + error)
+        }
+    }
+}
