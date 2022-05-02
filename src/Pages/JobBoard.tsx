@@ -8,7 +8,7 @@ import { fetchJobs, URL } from '../Redux/actions/actionCreators';
 function JobBoard() {
 
     const dispatch = useDispatch()
-    const state = useSelector((state) => state)
+    const state = useSelector((state) => state.jobs)
     console.log(state)
 
     useEffect(() => {

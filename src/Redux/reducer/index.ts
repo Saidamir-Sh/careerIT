@@ -29,3 +29,4 @@ export const rootReducer =  (state = initialState, action: Action): State => {
             return state;
     }
 }
+export type RootState = ReturnType<typeof rootReducer>;

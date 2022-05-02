@@ -9,7 +9,6 @@ export const fetchJobs = (url: string) => {
             let response = await fetch(`${url}limit=10&skip=10`)
             if(response.ok) {
                 let data = await response.json()
-                console.log(data)
                 dispatch({
                     type: ActionType.FETCH_JOBS,
                     payload: data
