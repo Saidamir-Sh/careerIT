@@ -1,13 +1,20 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import { rootReducer } from '../reducer';
+import { State } from './Interfaces';
 
-const composeEnhancers = window['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] as typeof compose || compose;
+declare global {
+    interface Window {
+      __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
 
-export const initialState = {
-    jobs: ,
-    isLoading: ,
-    savedJobs: ,
-    companyDetails: 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+export const initialState: State = {
+    jobs: [],
+    isLoading: true,
+    savedJobs: [],
 }
 
 const configureStore = createStore(

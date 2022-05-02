@@ -1,3 +1,5 @@
+import { Job } from "../store/Interfaces";
+
 export enum ActionType {
     FETCH_JOBS = 'FETCH_JOBS',
     FETCH_SEARCHED_JOBS = 'FETCH_SEARCHED_JOBS',
@@ -9,28 +11,29 @@ export enum ActionType {
 
 interface actionFetchJobs {
     type: ActionType.FETCH_JOBS;
+    payload: Job[]
 }
 
 interface actionSearch {
     type: ActionType.FETCH_SEARCHED_JOBS;
-    payload: Comment[];
+    payload: Job[];
 }
 
 interface actionByCategory {
     type: ActionType.FETCH_BY_CATEGORY;
-    payload: string;
+    payload: Job[];
 }
-interface actionFetchCompany {
-    type: ActionType.FETCH_COMPANY;
-    payload: string;
-}
+// interface actionFetchCompany {
+//     type: ActionType.FETCH_COMPANY;
+//     payload: string;
+// }
 interface actionAddSaved {
     type: ActionType.ADD_TO_SAVED;
-    payload: string;
+    payload: Job;
 }
 interface actionRemoveSaved {
     type: ActionType.REMOVE_FROM_SAVED;
-    payload: string;
+    payload: Job;
 }
 
-export type Action = actionFetchJobs | actionSearch | actionByCategory | actionByCategory | actionFetchCompany | actionAddSaved | actionRemoveSaved;
+export type Action = actionFetchJobs | actionSearch | actionByCategory | actionByCategory | actionAddSaved | actionRemoveSaved;

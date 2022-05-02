@@ -10,3 +10,9 @@ export interface Job {
     salary:                      string;
     description:                 string;
 }
+
+export interface State {
+    jobs: Job[],
+    isLoading: boolean,
+    savedJobs: Job[],
+}
