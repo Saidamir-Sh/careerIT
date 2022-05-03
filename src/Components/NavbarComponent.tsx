@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -10,11 +10,18 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import EmailIcon from '@mui/icons-material/Email';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { Button } from '@mui/material';
+import SavedJobsModal from './SavedJobsModal';
 
 
 function NavbarComponent() {
 
+  // Modal functionality
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const savedJobs = useTypedSelector((state) => state.savedJobs)
+
   console.log(savedJobs.length)
   return (
     <AppBar sx={{py: 1}} position="static" color="primary">
@@ -28,7 +35,7 @@ function NavbarComponent() {
           right: '2%'
         }} >
           <Badge badgeContent={savedJobs.length} color="info">
-            <Button variant='outlined' color='inherit'>Saved Jobs</Button>
+            <SavedJobsModal />
           </Badge>
           <Badge badgeContent={0} color="info">
             <EmailIcon color="inherit" />
