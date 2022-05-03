@@ -27,8 +27,8 @@ function NavbarComponent() {
           position: 'absolute',
           right: '2%'
         }} >
-          <Badge badgeContent={4} color="info">
-            <Button color='inherit'>Saved Jobs</Button>
+          <Badge badgeContent={savedJobs.length} color="info">
+            <Button variant='outlined' color='inherit'>Saved Jobs</Button>
           </Badge>
           <Badge badgeContent={0} color="info">
             <EmailIcon color="inherit" />
