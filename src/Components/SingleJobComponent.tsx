@@ -9,23 +9,17 @@ import { Job } from '../Redux/store/Interfaces';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import {  saveJob } from '../Redux/actions/actionCreators';
-import { Button } from '@mui/material';
 import SnackBarMessage from './SnackBarMessage'
+import { useNavigate } from 'react-router';
 
 function SingleJobComponent(props: {job: Job}) {
 
-  const dispatch = useDispatch()
-  const saved = useTypedSelector((state) => state.saved)
-  const savedJobs = useTypedSelector((state) => state.savedJobs)
+  const navigate = useNavigate()
 
-
-  const handleSave = () => {
-    dispatch<any>(saveJob(props.job))
-  }
   return (
 
     <Card style={{width: '100%', position: 'relative'}}>
-      <CardContent sx={{m: 0, p: 1}}>
+      <CardContent onClick={() => navigate('/job/' + props.job._id)} sx={{m: 0, p: 1}}>
         <Typography variant='subtitle1' fontWeight={600}>{props.job.title}</Typography>
         <Typography variant='subtitle2' color='primary' fontSize={14} >{!props.job.salary ? 'Undisclosed salary' : props.job.salary}</Typography>
         <Box display='flex' sx={{mt: 3}}>
@@ -37,11 +31,11 @@ function SingleJobComponent(props: {job: Job}) {
                 <LocationOnIcon color='disabled'/>
                 <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
-            <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
-              <SnackBarMessage job={props.job}/>
-            </Box>
         </Box>
       </CardContent>
+      <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
+              <SnackBarMessage job={props.job}/>
+      </Box>
     </Card>
 
   )

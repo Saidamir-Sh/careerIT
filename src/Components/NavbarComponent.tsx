@@ -30,18 +30,14 @@ function NavbarComponent() {
         </IconButton>
         <Typography variant="h5" fontWeight={900}>CareerIT</Typography>
         <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} component='div' style={{
-          width: '20%',
+          width: '17%',
           position: 'absolute',
           right: '2%'
         }} >
           <Badge badgeContent={savedJobs.length} color="info">
             <SavedJobsModal />
           </Badge>
-          <Badge badgeContent={0} color="info">
-            <EmailIcon color="inherit" />
-          </Badge>
-          <Button variant='outlined' color='inherit'>Login</Button>
-          <Button variant='contained' color='primary'>Sign up</Button>
+          <Button variant='outlined' color='inherit'>Sign up</Button>
         </Box>
       </Toolbar>
     </AppBar>
