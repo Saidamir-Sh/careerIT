@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid'
 import SingleJobComponent from '../Components/SingleJobComponent';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { fetchJobs, URL } from '../Redux/actions/actionCreators';
 import { State } from '../Redux/store/Interfaces';

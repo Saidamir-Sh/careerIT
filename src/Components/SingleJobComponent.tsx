@@ -7,9 +7,18 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Box } from '@mui/system';
 import { Job } from '../Redux/store/Interfaces';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
+import { removeJob, saveJob } from '../Redux/actions/actionCreators';
 
 function SingleJobComponent(props: {job: Job}) {
+
+  const dispatch = useDispatch()
+  const saved = useTypedSelector((state) => state.saved)
+  console.log(saved)
+
   return (
+
     <Card style={{width: '100%', position: 'relative'}}>
       <CardContent sx={{m: 0, p: 1}}>
         <Typography variant='subtitle1' fontWeight={600}>{props.job.title}</Typography>
@@ -23,12 +32,13 @@ function SingleJobComponent(props: {job: Job}) {
                 <LocationOnIcon color='disabled'/>
                 <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
-            <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
+            <Box onClick={!saved ? dispatch<any>(saveJob(props.job)) : dispatch<any>(removeJob(props.job))} style={{position: 'absolute', right: '2%', top: '40%'}}>
                 <FavoriteBorderIcon  color='primary'/>
             </Box>
         </Box>
       </CardContent>
     </Card>
+
   )
 }
 

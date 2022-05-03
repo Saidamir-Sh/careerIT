@@ -17,7 +17,6 @@ function SearchComponent() {
     setSearchQuery(e.target.value)
   }
 
-  console.log(byCategory)
   const category = [
     { label: 'DevOps'},
     { label: 'Finance'},
