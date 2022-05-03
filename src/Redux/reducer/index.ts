@@ -28,13 +28,15 @@ export const rootReducer =  (state = initialState, action: Action): State => {
         case ActionType.ADD_TO_SAVED : {
             return {
                 ...state,
-                savedJobs: [...state.savedJobs, action.payload]
+                savedJobs: [...state.savedJobs, action.payload],
+                saved: true,
             }
         }
         case ActionType.REMOVE_FROM_SAVED : {
             return {
                 ...state,
                 savedJobs: state.savedJobs?.filter((job) => job._id !== action.payload._id),
+                saved: false
             }
         }
         default: 

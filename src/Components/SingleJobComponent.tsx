@@ -23,8 +23,8 @@ function SingleJobComponent(props: {job: Job}) {
                 <LocationOnIcon color='disabled'/>
                 <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
-            <Box style={{position: 'absolute', right: '2%', top: '40%'}}>
-                <FavoriteBorderIcon color='primary'/>
+            <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
+                <FavoriteBorderIcon  color='primary'/>
             </Box>
         </Box>
       </CardContent>
