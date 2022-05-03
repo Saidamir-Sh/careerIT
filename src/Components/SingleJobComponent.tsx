@@ -5,18 +5,18 @@ import Typography from '@mui/material/Typography';
 import BusinessIcon from '@mui/icons-material/Business';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Box } from '@mui/system';
 import { Job } from '../Redux/store/Interfaces';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { removeJob, saveJob } from '../Redux/actions/actionCreators';
+import { Button } from '@mui/material';
 
 function SingleJobComponent(props: {job: Job}) {
 
   const dispatch = useDispatch()
   const saved = useTypedSelector((state) => state.saved)
-  console.log(saved)
+  const savedJobs = useTypedSelector((state) => state.savedJobs)
 
   return (
 
@@ -33,8 +33,8 @@ function SingleJobComponent(props: {job: Job}) {
                 <LocationOnIcon color='disabled'/>
                 <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
-            <Box onClick={() => {dispatch<any>(saveJob(props.job))}} style={{position: 'absolute', right: '2%', top: '40%'}}>
-                <FavoriteBorderIcon  color='primary'/>
+            <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
+              <Button onClick={() => {dispatch<any>(saveJob(props.job))}} variant="contained" color='primary' disabled={savedJobs?.some((savedJob) => savedJob._id == props.job._id)}>Save</Button>
             </Box>
         </Box>
       </CardContent>

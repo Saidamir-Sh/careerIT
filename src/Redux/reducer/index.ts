@@ -36,7 +36,7 @@ export const rootReducer =  (state = initialState, action: Action): State => {
             return {
                 ...state,
                 savedJobs: state.savedJobs?.filter((job) => job._id !== action.payload._id),
-                saved: !state.saved
+                saved: !state.saved,
             }
         }
         default: 
