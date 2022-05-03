@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { fetchJobs, URL } from '../Redux/actions/actionCreators';
 import { State } from '../Redux/store/Interfaces';
+import NotFoundComponent from '../Components/NotFoundComponent';
 
 function JobBoard() {
 
@@ -19,8 +20,8 @@ function JobBoard() {
   return (
     <Container style={{overflowY: 'scroll', height: '50vh'}}>
         <Grid container spacing={2}>
-            {
-                jobs.map((job) => (
+            {   (jobs.length === 0) ? <NotFoundComponent /> :
+                    jobs.map((job) => (
                     <Grid item xs={12} key={job._id} style={{cursor: 'pointer'}}>
                         <SingleJobComponent  job={job}/>
                     </Grid>

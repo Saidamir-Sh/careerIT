@@ -54,9 +54,9 @@ export default function SnackBarMessage (props: {job: Job}) {
   return (
     <div>
       <Button variant='contained' onClick={() => {handleClick(props.job)}} disabled={savedJobs?.some((savedJob) => savedJob._id == props.job._id)}>Save</Button>
-      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          This is a success message!
+          Job saved successfully!
         </Alert>
       </Snackbar>
       

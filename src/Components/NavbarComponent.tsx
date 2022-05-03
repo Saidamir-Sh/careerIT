@@ -40,7 +40,8 @@ function NavbarComponent() {
           <Badge badgeContent={0} color="info">
             <EmailIcon color="inherit" />
           </Badge>
-          <Avatar />
+          <Button variant='outlined' color='inherit'>Login</Button>
+          <Button variant='contained' color='primary'>Sign up</Button>
         </Box>
       </Toolbar>
     </AppBar>
