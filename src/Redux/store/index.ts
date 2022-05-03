@@ -15,6 +15,7 @@ export const initialState: State = {
     jobs: [],
     isLoading: true,
     savedJobs: [],
+    saved: false
 }
 
 export const configureStore = createStore(

@@ -15,4 +15,5 @@ export interface State {
     jobs: Job[],
     isLoading: boolean,
     savedJobs: Job[],
+    saved: boolean
 }

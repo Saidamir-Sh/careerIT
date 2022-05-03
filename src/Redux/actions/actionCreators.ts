@@ -1,4 +1,5 @@
 import { Dispatch } from "react";
+import { State } from "../store/Interfaces";
 import { ActionType, Action } from "./actionTypes";
 
 export const URL: string =  'https://strive-jobs-api.herokuapp.com/jobs?'
@@ -51,3 +52,14 @@ export const fetchByCategory = (url: string, category: {label: string} | null = 
         }
     }
 }
+// Add station to saved component
+export const saveJob = (job: State) => ({
+    type: ActionType.ADD_TO_SAVED,
+    payload: job,
+  })
+
+// remmoving item from saved component
+export const removeJob = (job: State) => ({
+    type: ActionType.REMOVE_FROM_SAVED,
+    payload: job
+})

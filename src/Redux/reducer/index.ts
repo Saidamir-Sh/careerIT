@@ -25,6 +25,18 @@ export const rootReducer =  (state = initialState, action: Action): State => {
                 isLoading: false
             }
         }
+        case ActionType.ADD_TO_SAVED : {
+            return {
+                ...state,
+                savedJobs: [...state.savedJobs, action.payload]
+            }
+        }
+        case ActionType.REMOVE_FROM_SAVED : {
+            return {
+                ...state,
+                savedJobs: state.savedJobs?.filter((job) => job._id !== action.payload._id),
+            }
+        }
         default: 
             return state;
     }
