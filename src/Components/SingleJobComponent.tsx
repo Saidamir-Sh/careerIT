@@ -4,13 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import BusinessIcon from '@mui/icons-material/Business';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Box } from '@mui/system';
 import { Job } from '../Redux/store/Interfaces';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
-import { removeJob, saveJob } from '../Redux/actions/actionCreators';
+import {  saveJob } from '../Redux/actions/actionCreators';
 import { Button } from '@mui/material';
+import SnackBarMessage from './SnackBarMessage'
 
 function SingleJobComponent(props: {job: Job}) {
 
@@ -18,6 +18,10 @@ function SingleJobComponent(props: {job: Job}) {
   const saved = useTypedSelector((state) => state.saved)
   const savedJobs = useTypedSelector((state) => state.savedJobs)
 
+
+  const handleSave = () => {
+    dispatch<any>(saveJob(props.job))
+  }
   return (
 
     <Card style={{width: '100%', position: 'relative'}}>
@@ -34,7 +38,7 @@ function SingleJobComponent(props: {job: Job}) {
                 <Typography variant='subtitle2' color='disabled' >{!props.job.candidate_required_location ? 'Remote' : props.job.candidate_required_location}</Typography>
             </Box>
             <Box  style={{position: 'absolute', right: '2%', top: '40%'}}>
-              <Button onClick={() => {dispatch<any>(saveJob(props.job))}} variant="contained" color='primary' disabled={savedJobs?.some((savedJob) => savedJob._id == props.job._id)}>Save</Button>
+              <SnackBarMessage job={props.job}/>
             </Box>
         </Box>
       </CardContent>
