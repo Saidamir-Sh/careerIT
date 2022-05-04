@@ -6,6 +6,7 @@ import Modal from '@mui/material/Modal';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import SingleJobComponent from './SingleJobComponent';
 import { Grid } from '@mui/material';
+import SavedJobComponent from './SavedJobComponent';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -46,7 +47,7 @@ function SavedJobsModal() {
             {
                 savedJobs.map((job) => (
                     <Grid item xs={12} key={job._id} style={{cursor: 'pointer'}}>
-                        <SingleJobComponent job={job}/>
+                        <SavedJobComponent job={job}/>
                     </Grid>
                 ))
             }
