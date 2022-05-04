@@ -17,6 +17,7 @@
     "@types/node": "^16.11.29",
     "@types/react": "^18.0.7",
     "@types/react-dom": "^18.0.0",
+    "interweave": "^13.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.1",
