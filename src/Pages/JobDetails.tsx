@@ -5,15 +5,6 @@ import NavbarComponent from '../Components/NavbarComponent'
 
 function JobDetails() {
 
-    const detailsStyle = {
-        position: 'absolute', 
-        width: '80%', 
-        bottom: 0, 
-        left: '50%', 
-        transform: 'translate(-50%, 0%)', 
-        height: '50vh', 
-        overflowY: 'scroll'
-    }
   return (
     <Container style={{
         minWidth: "100%",
@@ -22,7 +13,7 @@ function JobDetails() {
       }}>
         <NavbarComponent />
         <Grid display='flex'>
-            <Grid item xs={8}  sx={detailsStyle}>
+            <Grid item xs={8}>
                 <DetailsComponent />
             </Grid>
         </Grid>

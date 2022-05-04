@@ -6,9 +6,6 @@ import BusinessIcon from '@mui/icons-material/Business';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Box } from '@mui/system';
 import { Job } from '../Redux/store/Interfaces';
-import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
-import {  saveJob } from '../Redux/actions/actionCreators';
 import SnackBarMessage from './SnackBarMessage'
 import { useNavigate } from 'react-router';
 
