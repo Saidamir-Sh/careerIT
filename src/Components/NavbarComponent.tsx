@@ -11,13 +11,12 @@ import EmailIcon from '@mui/icons-material/Email';
 import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { Button } from '@mui/material';
 import SavedJobsModal from './SavedJobsModal';
+import { useNavigate } from 'react-router';
 
 
 function NavbarComponent() {
 
-  // Modal functionality
-  const [open, setOpen] = useState<boolean>(false);
-
+  const navigate = useNavigate()
   const savedJobs = useTypedSelector((state) => state.savedJobs)
 
   return (
@@ -34,7 +33,7 @@ function NavbarComponent() {
           <Badge badgeContent={savedJobs.length} color="info">
             <SavedJobsModal />
           </Badge>
-          <Button variant='outlined' color='inherit'>Sign up</Button>
+          <Button onClick={() => navigate('/singup')} variant='outlined' color='inherit'>Sign up</Button>
         </Box>
       </Toolbar>
     </AppBar>

@@ -12,6 +12,7 @@ import JobBoard from './Pages/JobBoard';
 import { Provider } from 'react-redux';
 import {configureStore} from './Redux/store/index'
 import JobDetails from './Pages/JobDetails';
+import SingUpComponent from './Components/SingUpComponent';
 
 function App() {
   return (
@@ -42,6 +43,11 @@ function App() {
             <Grid item xs={12}>
               <Routes>
                 <Route path='/job/:job_id' element={<JobDetails />}/>
+              </Routes>
+            </Grid>
+            <Grid item xs={12}>
+              <Routes>
+                <Route path='/singup' element={<SingUpComponent />}/>
               </Routes>
             </Grid>
           </Grid>
