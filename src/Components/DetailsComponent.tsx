@@ -24,9 +24,17 @@ function DetailsComponent() {
         height: '50vh', 
         overflowY: 'scroll'
     }
+    const headerStyle = {
+        position: 'absolute', 
+        width: '70%', 
+        top: '15%', 
+        left: '50%', 
+        transform: 'translate(-50%, 0%)', 
+        height: '50vh', 
+    }
   return (
     <Box component='div'>
-        <Box component='div'>
+        <Box component='div' sx={headerStyle}>
             <Typography variant='h4' fontWeight={600}>{selectedJob?.title}</Typography>
             <Typography color='primary'>{!selectedJob?.salary ? 'Undisclosed salary' : selectedJob.salary}</Typography>
             <Box display='flex' sx={{mt: 3}}>
@@ -42,7 +50,7 @@ function DetailsComponent() {
                 <Typography variant='subtitle2' color='disabled' >{selectedJob?.job_type.replace('_', ' ').toUpperCase()}</Typography>
             </Box>
         </Box>
-        <Button sx={{mt: 3}} variant='contained' color='primary'><Link href={selectedJob?.url}>Apply</Link></Button>
+        <Button sx={{mt: 3}} variant='contained' color='primary'><Link href={selectedJob?.url} color='inherit' underline='none'>Apply</Link></Button>
         </Box>
         <Box component='div' sx={detailsStyle}>
             <Typography variant='h6' fontWeight={600}>Description :</Typography>
