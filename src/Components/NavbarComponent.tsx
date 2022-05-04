@@ -17,12 +17,9 @@ function NavbarComponent() {
 
   // Modal functionality
   const [open, setOpen] = useState<boolean>(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   const savedJobs = useTypedSelector((state) => state.savedJobs)
 
-  console.log(savedJobs.length)
   return (
     <AppBar sx={{py: 1}} position="static" color="primary">
       <Toolbar variant="dense">

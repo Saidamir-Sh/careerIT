@@ -28,7 +28,6 @@ function SavedJobsModal() {
   const handleClose = () => setOpen(false);
 
   const savedJobs = useTypedSelector((state) => state.savedJobs)
-  console.log(savedJobs)
 
   return (
     <div>

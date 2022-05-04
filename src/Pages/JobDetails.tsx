@@ -1,5 +1,6 @@
 import { Container, Grid } from '@mui/material'
 import React from 'react'
+import DetailsComponent from '../Components/DetailsComponent'
 import NavbarComponent from '../Components/NavbarComponent'
 
 function JobDetails() {
@@ -12,7 +13,7 @@ function JobDetails() {
         <NavbarComponent />
         <Grid container>
             <Grid item>
-
+                <DetailsComponent />
             </Grid>
         </Grid>
     </Container>
