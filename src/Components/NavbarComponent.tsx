@@ -27,7 +27,7 @@ function NavbarComponent() {
         </IconButton>
         <Typography variant="h5" fontWeight={900}>CareerIT</Typography>
         <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} component='div' style={{
-          width: '20%',
+          width: '30%',
           position: 'absolute',
           right: '2%'
         }} >
