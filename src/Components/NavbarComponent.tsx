@@ -12,6 +12,7 @@ import { useTypedSelector } from '../Redux/hooks/useTypeSelector';
 import { Button } from '@mui/material';
 import SavedJobsModal from './SavedJobsModal';
 import { useNavigate } from 'react-router';
+import CustomizedSwitches from './ModeSwitch';
 
 
 function NavbarComponent() {
@@ -26,10 +27,11 @@ function NavbarComponent() {
         </IconButton>
         <Typography variant="h5" fontWeight={900}>CareerIT</Typography>
         <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}} component='div' style={{
-          width: '17%',
+          width: '20%',
           position: 'absolute',
           right: '2%'
         }} >
+          <CustomizedSwitches />
           <Badge badgeContent={savedJobs.length} color="info">
             <SavedJobsModal />
           </Badge>
