@@ -1,7 +1,6 @@
 import { Button, Container, TextField, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import GoogleIcon from '@mui/icons-material/Google';
-import React from 'react'
 
 function SingUpComponent() {
   return (
